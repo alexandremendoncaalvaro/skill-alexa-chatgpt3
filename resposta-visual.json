@@ -1,0 +1,61 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "2022.1",
+        "license": "Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.5.0"
+            }
+        ],
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "item": [
+                {
+                    "type": "AlexaHeadline",
+                    "id": "PlantHeadline",
+                    "primaryText": "${payload.headlineTemplateData.properties.textContent.primaryText.text}",
+                    "headerBackButton": false,
+                    "headerAttributionImage": "${payload.headlineTemplateData.properties.logoUrl}",
+                    "headerAttributionPrimacy": true,
+                    "footerHintText": "${payload.headlineTemplateData.properties.hintText}",
+                    "backgroundImageSource": "${payload.headlineTemplateData.properties.backgroundImage.sources[0].url}",
+                    "backgroundColorOverlay": false,
+                    "headerTitle": "Modo Avançado",
+                    "headerSubtitle": "OpenAI GPT-3"
+                }
+            ]
+        }
+    },
+    "datasources": {
+        "headlineTemplateData": {
+            "type": "object",
+            "objectId": "headlineSample",
+            "properties": {
+                "backgroundImage": {
+                    "contentDescription": null,
+                    "smallSourceUrl": null,
+                    "largeSourceUrl": null,
+                    "sources": [
+                        {
+                            "url": "https://inteligenciadascoisas.com/post/20221209-t%c3%a1-assustado-com-as-evolu%c3%a7%c3%b5es-das-ias-olha-ent%c3%a3o-esse-chat-gtp/capa.jpg",
+                            "size": "large"
+                        }
+                    ]
+                },
+                "textContent": {
+                    "primaryText": {
+                        "type": "PlainText",
+                        "text": "Bem vindo ao Modo Avançado."
+                    }
+                },
+                "logoUrl": "https://openaichatgpt.com.br/wp-content/uploads/2022/12/cxv1.png",
+                "hintText": "Tente dizer, \"Pergunta, qual o comando de Linux para desligar o PC?\""
+            }
+        }
+    }
+}
